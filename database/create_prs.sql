@@ -13,15 +13,18 @@ GO
 CREATE TABLE Users
 (
 ID					INT					NOT NULL IDENTITY PRIMARY KEY,
-UserName			VARCHAR(30)			NOT NULL UNIQUE,
-Password			VARCHAR(30)			NOT NULL,
-FirstName			VARCHAR(30)			NOT NULL,
-LastName			VARCHAR(30)			NOT NULL,
+UserName			NVARCHAR(30)			NOT NULL UNIQUE,
+Password			NVARCHAR(30)			NOT NULL,
+FirstName			NVARCHAR(30)			NOT NULL,
+LastName			NVARCHAR(30)			NOT NULL,
 Phone				VARCHAR(12)			NULL,
 Email				VARCHAR(255)		NULL,
 IsReviewer			BIT					NOT NULL,
 IsAdmin				BIT					NOT NULL
 );
+
+
+
 
 
 CREATE TABLE Vendors
@@ -64,6 +67,7 @@ Status				VARCHAR(10)			NOT NULL DEFAULT 'NEW',
 Total				DECIMAL(11,2)		NOT NULL DEFAULT 0,
 UserID				INT					NOT NULL REFERENCES Users(ID)
 );
+
 
 
 CREATE TABLE RequestLine
